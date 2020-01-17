@@ -1,0 +1,16 @@
+<div class="form-block">
+  <form class="form" [formGroup]="form">
+    <mat-form-field class="full-width-input">
+      <input formControlName="login" matInput placeholder="Login">
+    </mat-form-field>
+
+    <mat-form-field class="full-width-input">
+      <input formControlName="password" type="password" matInput placeholder="Password">
+    </mat-form-field>
+    <mat-form-field class="full-width-input" *ngIf="isRegister">
+      <input formControlName="repeatPassword" type="password" matInput placeholder="Repeat password">
+    </mat-form-field>
+    <button mat-raised-button [color]="isRegister ? null : 'primary'" (click)="login()">Login</button> or
+    <button mat-raised-button [color]="isRegister ? 'primary' : null"  (click)="register()">Register</button>
+  </form>
+</div>
